@@ -1,15 +1,22 @@
 {
-  "manifest_version": 2,
+    "name": "Objective Youtube",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Eliminates bias in viewing youtube content",
+    "background": {
+        "scripts": ["test.js"]
+    },    
+    "page_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },    
+    "content_scripts": [ {
+        "js": [ "jquery-2.1.1.min.js", "content-script.js"  ],
+        "matches": [ "https://*.youtube.com/watch*" ]    
+    } ],
 
-  "name": "One-click Kittens",
-  "description": "This extension demonstrates a browser action with kittens.",
-  "version": "1.0",
-
-  "permissions": [
-    "https://secure.flickr.com/"
-  ],
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  }
+    "permissions" : [
+        "tabs",
+        "http://*/*"
+            ]
 }
